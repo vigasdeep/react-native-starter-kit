@@ -1,0 +1,7 @@
+// Styles for the Posts/s component/s
+
+.post-view-card {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+  }
+}

@@ -69,13 +69,22 @@ _*It's recommended that you install [React Native Debugger](https://github.com/j
 # Clone the repo
 git clone https://github.com/mcnamee/react-native-starter-kit.git
 
-# Install dependencies
-yarn install
+# In the terminal, browse to the `react-native-starter-kit` directory
+cd react-native-starter-kit
+
+# Install shared dependencies
+yarn
 ```
 
 #### 2.1. Run the _React Native_ App
 
 ```bash
+# In the terminal, browse to the `native` directory
+cd native
+
+# Install native dependencies
+yarn
+
 # Start the React Native packager
 yarn start
 ```
@@ -88,14 +97,18 @@ Instructions are shown in the terminal. You can select to open it in:
 #### 2.2. Run the _Web_ App
 
 ```bash
-# Starts are local live-reload server at:
-# http://localhost:3001
-yarn run web
+# In the terminal, browse to the `web` directory
+cd web
+
+# Install native dependencies
+yarn
+
+# Start the React Native packager
+yarn dev
 ```
 
-Via webpack, starts a localhost server on port 3001 [http://localhost:3001](http://localhost:3001).
+Open [http://localhost:3000](http://localhost:3000) to view your running app. When you're ready for production, run the build then start scripts.
 
-- Save code and it auto refreshes
 - Install [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) into Chrome to see the state of Redux
 
 ---

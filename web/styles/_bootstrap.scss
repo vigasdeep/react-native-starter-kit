@@ -1,0 +1,21 @@
+// Override Bootstrap's variables before importing
+
+// Colors
+// $white: '#FFFFFF';
+$purple: #473BE7;
+$primary: $purple;
+$body-bg: #ECF0F3;
+$body-color: #8D8E90;
+
+// Jumbotron
+$jumbotron-bg: #FFFFFF;
+
+// Misc
+$border-radius: 0;
+
+// Type
+$font-family-sans-serif: 'Inter UI', sans-serif;
+$headings-margin-bottom: .5em;
+
+// Then import Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';

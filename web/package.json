@@ -1,0 +1,20 @@
+{
+  "name": "react-native-starter-kit",
+  "repository": "https://github.com/mcnamee/react-native-starter-kit.git",
+  "author": "Matt Mcnamee (https://github.com/mcnamee)",
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.2.1",
+    "next": "^7.0.2",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1",
+    "reactstrap": "^7.1.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}

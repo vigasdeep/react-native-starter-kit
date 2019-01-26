@@ -1,0 +1,55 @@
+// Styles for the Sidebar.js component
+
+$sidebar-bg: #22262E;
+$sidebar-bg-active: #141519;
+$sidebar-border: #252931;
+$sidebar-link-color: #6A6E74;
+
+.sidebar {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto; // Scrollable contents if viewport is shorter than content.
+  background-color: $sidebar-bg;
+  border-right: 1px solid $sidebar-border;
+
+  .nav {
+    margin-bottom: 20px;
+  }
+
+  .nav-item {
+    width: 100%;
+
+    & + .nav-item {
+      margin-left: 0;
+    }
+  }
+
+  .nav-link {
+    color: $sidebar-link-color;
+    font-size: .9rem;
+    padding: .75rem 1rem;
+
+    i {
+      font-size: 1.2rem;
+      margin-right: .4rem;
+    }
+
+    span {
+      position: absolute;
+    }
+
+    &.active,
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      background: $sidebar-bg-active;
+    }
+  }
+}

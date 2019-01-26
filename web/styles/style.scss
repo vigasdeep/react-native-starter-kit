@@ -1,0 +1,42 @@
+@import 'bootstrap';
+@import 'components/sidebar';
+@import 'components/posts';
+@import 'components/loading';
+@import 'components/header';
+@import 'components/footer';
+
+body {
+  padding-top: 3.5em;
+}
+
+// Form Overrides
+.form-control {
+  &:focus {
+    box-shadow: none;
+    border-color: $gray-400;
+    border-bottom-color: $primary;
+    outline: none;
+  }
+}
+
+.btn {
+  i {
+    font-size: .8rem;
+  }
+}
+
+// Jumbotron
+.jumbotron {
+  border-radius: 0;
+}
+
+// Pulsating Loading Animation
+.content-loading {
+  animation: fadeInOut 1s linear;
+  opacity: 1;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: .2; }
+  50% { opacity: .7; }
+}
