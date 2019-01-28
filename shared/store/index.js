@@ -1,36 +1,21 @@
 /* global window */
-import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage'; // default: localStorage if web, AsyncStorage if react-native
+import { applyMiddleware, compose, createStore } from 'redux';
+import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-import reducers from '../reducers';
+import { reducers, persistedReducers } from '../reducers';
 
-// Redux Persist config
-const config = {
-  key: 'root',
-  storage,
-  blacklist: ['status'],
-};
+// Init Redux Store (and apply middleware)
+export function initializeStore(initialState = {}, usePersisted = false) {
+  // Allows us to use devtools when installed (browser extension)
+  const composeEnhancer = (window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const reducer = persistCombineReducers(config, reducers);
-
-const middleware = [thunk];
-
-const configureStore = () => {
-  const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-  const store = createStore(
-    reducer,
-    composeEnhancer(applyMiddleware(...middleware)),
+  return createStore(
+    usePersisted ? persistedReducers() : reducers(),
+    initialState,
+    composeEnhancer(applyMiddleware(thunk)),
   );
+}
 
-  const persistor = persistStore(
-    store,
-    null,
-    () => { store.getState(); },
-  );
-
-  return { persistor, store };
-};
-
-export default configureStore;
+// Init Redux Persist
+export const store = initializeStore({}, true);
+export const persistor = persistStore(store, undefined, () => { store.getState(); });
